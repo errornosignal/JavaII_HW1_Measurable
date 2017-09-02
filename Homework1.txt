@@ -1,0 +1,24 @@
+Java II Fall 2017
+
+Homework 1
+1. Create an interface called Measurable. It should contain one method defined as:
+    o double getMeasure();
+2. Write a static generic method PairUtil.minmax that computes the minimum and maximum
+    elements of List of type T and returns a pair containing the minimum and maximum value.
+    Require that the List elements implement the Measurable interface. NOTE: You will need to
+    create a class that implements Measurable – Any class will do, for example, consider a class Star
+    of which we might measure its luminosity in watts.
+3. Repeat the method above, but require that the list elements extend the generic Comparable
+    type.
+4. Make the Measurable interface from into a generic class - GenericMeasurable. Provide a static
+    method that returns the largest element of a List, provided that the elements are instances of
+    Measurable. Be sure to return a value of type T. Make sure that the elements of the List can
+    implement Measurable for appropriate types U.
+
+What you submit
+    You will need to include screenshots of you application running. No external documentation is required,
+    but you will need to have complete and appropriate Javadoc in the code.
+
+Submitting your Program
+    You will submit this assignment on blackboard. You are allowed one submission. You will need to submit
+    your .java files and your screenshot.
