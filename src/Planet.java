@@ -1,4 +1,4 @@
-public class Planet<T extends Measurable<? super T>>
+public class Planet<T extends Measurable<T>>
 {
     private T age;
 
@@ -11,12 +11,12 @@ public class Planet<T extends Measurable<? super T>>
         return String.format("Age = ('%s')", this.getAge());
     }
 
-    public T getAge()
+    private T getAge()
     {
         return age;
     }
 
-    public void setCommonName(T age)
+    private void setCommonName(T age)
     {
         this.age = age;
     }

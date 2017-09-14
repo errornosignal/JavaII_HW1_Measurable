@@ -1,4 +1,5 @@
-public class Star <T extends Measurable<? super T>>
+
+public class Star <T> implements Measurable<T>
 {
     private T age;
 
@@ -8,16 +9,18 @@ public class Star <T extends Measurable<? super T>>
 
     @Override
     public String toString() {
-        return String.format("Age = ('%s')", this.getAge());
+        return String.format("Age=('%s')", getAge());
     }
 
-    public T getAge()
-    {
-        return age;
+    private T getAge() {
+        return this.age;
     }
 
-    public void setCommonName(T age)
-    {
+    private void setCommonName(T age) {
         this.age = age;
+    }
+
+    @Override
+    public void getMeasure(T obj) {
     }
 }
