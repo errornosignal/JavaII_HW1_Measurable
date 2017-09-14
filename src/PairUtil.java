@@ -1,7 +1,6 @@
 
+public class PairUtil
+{
 
-public class PairUtil<T> {
-    public static void minMax() {
 
-    }
 }

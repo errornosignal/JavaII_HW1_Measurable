@@ -3,34 +3,36 @@ import java.util.List;
 
 public class Main
 {
-    private static List<Object> list = new ArrayList<>();
+    private static List<SolarSystem> ssList = new ArrayList<>();
 
     public static void main(String[] args)
     {
-        SolarSystem<String, Double> SolarSystem1 = new SolarSystem<>("Milky Way",100000.00);
-        SolarSystem<String, Double> SolarSystem2 = new SolarSystem<>("Andromeda",5000000.75);
-        SolarSystem<Integer, Star> Star1 = new SolarSystem<>(42, new Star<>(4000000));
-        SolarSystem<String, Star> Star2 = new SolarSystem<>("Sirius", new Star<>(9000000));
-        SolarSystem<String, Star> Star3 = new SolarSystem<>("Zeke", new Star<>(1000000));
-        SolarSystem<Double, Star> Star4 = new SolarSystem<>(70.52, new Star<>(4000000));
+        SolarSystem<String, Star<Integer>> Star1 = new SolarSystem<>("Sol", new Star<>(4000000));
+        SolarSystem<String, Star<Integer>> Star2 = new SolarSystem<>("Sirius", new Star<>(90000000));
+        SolarSystem<String, Star<Integer>> Star3 = new SolarSystem<>("Zeke", new Star<>(10000));
+        SolarSystem<String, Star<Integer>> Star4 = new SolarSystem<>("Signus", new Star<>(200000));
 
-//        System.out.println(SolarSystem1);
-//        System.out.println(SolarSystem2);
-//        System.out.println(Star1);
-//        System.out.println(Star2);
-//        System.out.println(Star3);
-//        System.out.println(Star4);
+        ssList.add(Star1);
+        ssList.add(Star2);
+        ssList.add(Star3);
+        ssList.add(Star4);
 
-        list.add(SolarSystem1);
-        list.add(SolarSystem2);
-        list.add(Star1);
-        list.add(Star2);
-        list.add(Star3);
-        list.add(Star4);
+        System.out.println();
+        System.out.println("******PRE SORT*****");
+        for (Object x: ssList) {
+            System.out.println(x);
+        }
 
-        //list.sort
+        System.out.println();
+        System.out.println(Star1.getValue1() + " " + Star1.getValue2());
+        System.out.println(Star2.getValue1() + " " + Star2.getValue2());
+        System.out.println(Star3);
 
-        for (Object x: list) {
+        ssList.sort((o1, o2) -> 0);
+
+        System.out.println();
+        System.out.println("*****POST SORT*****");
+        for (Object x: ssList) {
             System.out.println(x);
         }
     }

@@ -1,26 +1,33 @@
 
-public class Star <T> implements Measurable<T>
-{
-    private T age;
+public class Star <U extends Comparable<? super U>> implements Comparable<Star<? super U>> {
 
-    public Star(T age) {
-        this.setCommonName(age);
+    private U age;
+
+    public Star(U age)
+    {
+        this.setAge(age);
     }
 
-    @Override
-    public String toString() {
-        return String.format("Age=('%s')", getAge());
-    }
-
-    private T getAge() {
+    public U getAge()
+    {
         return this.age;
     }
 
-    private void setCommonName(T age) {
+    public void setAge(U age)
+    {
         this.age = age;
     }
 
     @Override
-    public void getMeasure(T obj) {
+    public String toString()
+    {
+        return String.valueOf(age);
+        //return "Star{" + "age=" + age + '}';
+    }
+
+    @Override
+    public int compareTo(Star<? super U> o)
+    {
+        return o.getAge().compareTo(this.age);
     }
 }

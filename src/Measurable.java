@@ -1,4 +1,4 @@
 
 public interface Measurable<T> {
-    void getMeasure(T obj);
+    double getMeasure(T obj);
 }
